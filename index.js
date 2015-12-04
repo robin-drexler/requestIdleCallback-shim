@@ -4,7 +4,7 @@
 module.exports = {
   requestIdleCallback: function (cb) {
     if (window.requestIdleCallback) {
-      return window.requestIdleCallback(cb);
+      return window.requestIdleCallback.apply(window, arguments);
     }
 
     var start = Date.now();
@@ -21,7 +21,7 @@ module.exports = {
 
   cancelIdleCallback: function (handler) {
     if (window.cancelIdleCallback) {
-      return window.cancelIdleCallback(handler);
+      return window.cancelIdleCallback.apply(window, arguments);
     }
 
     return window.clearTimeout(handler);
