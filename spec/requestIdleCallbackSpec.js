@@ -23,6 +23,7 @@ describe('requestIdleCallback', function () {
 
     window = {
       requestIdleCallback: undefined,
+      cancelIdleCallback: undefined,
       setTimeout: function() {}
     };
 

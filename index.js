@@ -17,6 +17,13 @@ module.exports = {
         }
       });
     }, 1);
+  },
 
+  cancelIdleCallback: function (handler) {
+    if (window.cancelIdleCallback) {
+      return window.cancelIdleCallback(handler);
+    }
+
+    return window.clearTimeout(handler);
   }
 };
