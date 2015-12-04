@@ -1,6 +1,6 @@
 describe('cancelIdleCallback', function () {
 
-  it('should use window.cancelIdleCallback when its available', function () {
+  it('should use window.cancelIdleCallback when it is available', function () {
     window = {
       requestIdleCallback: function () {},
       cancelIdleCallback: function() {}
@@ -20,7 +20,7 @@ describe('cancelIdleCallback', function () {
     expect(window.cancelIdleCallback).toHaveBeenCalledWith(handler);
   });
 
-  it('should use window.clearTimeout when its not available', function () {
+  it('should use window.clearTimeout when it is not available', function () {
     window = {
       requestIdleCallback: function() {},
       cancelIdleCallback: undefined,
